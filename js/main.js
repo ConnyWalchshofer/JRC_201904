@@ -1,14 +1,7 @@
 /* global d3, crossfilter, timeSeriesChart, barChart */
-// Timestamp,car-id,car-type,gate-name
 // id,type,chromosome,start,end,mutation
 
-// 2015-05-01 00:43:28
-// var dateFmt = d3.timeParse("%Y-%m-%d %H:%M:%S");
 
-// var chartTimeline = timeSeriesChart()
-//   .width(1000)
-//   .x(function (d) { return d.key;})
-//   .y(function (d) { return d.value;});
 var barChartChromosome = barChart()
   .width(600)
   .x(function (d) { return d.key;})
@@ -16,6 +9,11 @@ var barChartChromosome = barChart()
 var barChartType = barChart()
   .x(function (d) { return d.key;})
   .y(function (d) { return d.value;});
+
+// //call the fetch function
+//   fetch('https://dcc.icgc.org/api/v1/projects/GBM-US/mutations?field=id,mutation,type,chromosome,start,end&size=100&order=desc')
+//   .then(res => res.json())//response type
+//   .then(data => console.log(data)); //log the data;
 
 d3.csv("data/mutations.csv",
   function (err, data) {
@@ -32,21 +30,13 @@ d3.csv("data/mutations.csv",
 
     var csData = crossfilter(data);
 
-    // We create dimensions for each attribute we want to filter by
-    // csData.dimTime = csData.dimension(function (d) { return d.Timestamp; });
+    // Create dimensions for each attribute to filter by
     csData.dimType = csData.dimension(function (d) { return d["type"]; });
     csData.dimChromosomeNames = csData.dimension(function (d) { return d["chromosome"]; });
 
-    // We bin each dimension
-    // csData.timesByHour = csData.dimTime.group(d3.timeHour);
+    // Bin each dimension
     csData.types = csData.dimType.group();
     csData.chromosomeNames = csData.dimChromosomeNames.group();
-
-
-    // chartTimeline.onBrushed(function (selected) {
-    //   csData.dimTime.filter(selected);
-    //   update();
-    // });
 
     barChartType.onMouseOver(function (d) {
       csData.dimType.filter(d.key);
@@ -67,11 +57,7 @@ d3.csv("data/mutations.csv",
     });
 
     function update() {
-      // d3.select("#timeline")
-      //   .datum(csData.timesByHour.all())
-      //   .call(chartTimeline);
-
-      d3.select("#types")
+       d3.select("#types")
         .datum(csData.types.all())
         .call(barChartType);
 

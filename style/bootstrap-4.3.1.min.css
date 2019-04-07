@@ -50,7 +50,7 @@ body{
     color:#212529;
     text-align:left;
     background-color:#fff;
-    margin: 2rem 0 1rem 2rem
+    margin: 2rem 2rem 2rem 2rem
 }
 [tabindex="-1"]:focus{
     outline:0!important

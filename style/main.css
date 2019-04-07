@@ -1,19 +1,19 @@
-#timeline .line {
+/* #timeline .line {
     fill: none;
     stroke: #000;
     stroke-width: 1.5px;
-  }
+  } */
   
-  #timeline .area {
+  /* #timeline .area {
     /*fill: #969696;*/
-    fill: steelblue;
-  }
+    /* fill: steelblue; */
+  /* } */
   
-  #timeline .attention {
+  /* #timeline .attention {
     background: yellow;
     margin: -4px;
     padding: 4px;
-  }
+  } */
   
   .barChart .bar {
     fill: steelblue;
