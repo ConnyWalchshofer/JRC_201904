@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* global d3version4 */
+=======
+/* global d3 */
+>>>>>>> 61615dd7a4d42aa745760fdb960561f2d70f8503
 
 function barChart() {
 
@@ -9,8 +13,13 @@ function barChart() {
       innerHeight = height - margin.top - margin.bottom,
       xValue = function(d) { return d[0]; },
       yValue = function(d) { return d[1]; },
+<<<<<<< HEAD
       xScale = d3version4.scaleBand().padding(0.1),
       yScale = d3version4.scaleLinear(),
+=======
+      xScale = d3.scaleBand().padding(0.1),
+      yScale = d3.scaleLinear(),
+>>>>>>> 61615dd7a4d42aa745760fdb960561f2d70f8503
       onMouseOver = function () { },
       onMouseOut = function () { };
   
@@ -18,7 +27,11 @@ function barChart() {
       selection.each(function (data) {
   
         // Select the svg element, if it exists.
+<<<<<<< HEAD
         var svg = d3version4.select(this).selectAll("svg").data([data]);
+=======
+        var svg = d3.select(this).selectAll("svg").data([data]);
+>>>>>>> 61615dd7a4d42aa745760fdb960561f2d70f8503
   
         // Otherwise, create the skeletal chart.
         var svgEnter = svg.enter().append("svg");
@@ -41,6 +54,7 @@ function barChart() {
         xScale.rangeRound([0, innerWidth])
           .domain(data.map(xValue));
         yScale.rangeRound([innerHeight, 0])
+<<<<<<< HEAD
           .domain([0, d3version4.max(data, yValue)]);
   
         g.select(".x.axis")
@@ -49,12 +63,26 @@ function barChart() {
   
         g.select(".y.axis")
             .call(d3version4.axisLeft(yScale).ticks(10))
+=======
+          .domain([0, d3.max(data, yValue)]);
+  
+        g.select(".x.axis")
+            .attr("transform", "translate(0," + innerHeight + ")")
+            .call(d3.axisBottom(xScale));
+  
+        g.select(".y.axis")
+            .call(d3.axisLeft(yScale).ticks(10))
+>>>>>>> 61615dd7a4d42aa745760fdb960561f2d70f8503
           .append("text")
             .attr("transform", "rotate(-90)")
             .attr("y", 6)
             .attr("dy", "0.71em")
             .attr("text-anchor", "end")
+<<<<<<< HEAD
             // .text("Frequency");
+=======
+            .text("Frequency");
+>>>>>>> 61615dd7a4d42aa745760fdb960561f2d70f8503
   
         var bars = g.selectAll(".bar")
           .data(function (d) { return d; });

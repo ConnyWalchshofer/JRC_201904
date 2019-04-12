@@ -21,6 +21,7 @@
   .barChart .x.axis path {
     display: none;
   }
+<<<<<<< HEAD
   #types .x.axis text {
       text-anchor: inherit;
   }
@@ -309,3 +310,13 @@
   /* .dark ::-webkit-scrollbar-thumb {
     background: #444;
   } */
+=======
+  #gates .x.axis text {
+      text-anchor: end;
+  }
+  
+  #gates svg {
+      overflow: visible;
+  }
+  
+>>>>>>> 61615dd7a4d42aa745760fdb960561f2d70f8503
