@@ -16,6 +16,11 @@ _Goal: Demonstrate your ability to design and write web-based applications._
 
 Create a browser-based JavaScript tool for interactive visualization of mutations in cancer. Your tool will retrieve data from an API provided by the Data Coordination Center of the International Cancer Genomics Consortium (http://dcc.icgc.org).
 
+### Annotation
+The following interaction techniques could not be implemented due to lack of time:
+- Adding functionality to the buttons of the bar chart in terms of sorting the x-axis label in a chronological order/descending order.
+- Using e.g. a an Ideogram in order to display chromosomes OR using a stacked bar chart instead of a "normal" bar chart to display the related chromosome types of the Type Overview (left bar chart) in the Chromosome Overview (right bar chart) chart.
+
 ## Task 3
 
 _Goal: Demonstrate your ability to design a novel visualization._

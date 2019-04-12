@@ -265,7 +265,7 @@ template{
     display:none!important
 }
 .h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{
-    margin-bottom:.5rem;
+    margin-bottom:1rem;
     font-weight:500;
     line-height:1.2
 }
@@ -684,9 +684,9 @@ pre code{
         max-width:58.333333%
     }
     .col-sm-8{
-        -ms-flex:0 0 66.666667%;
-        flex:0 0 66.666667%;
-        max-width:66.666667%
+        -ms-flex:0 0 85%;
+        flex:0 0 85%;
+        max-width:86%
     }
     .col-sm-9{
         -ms-flex:0 0 75%;
