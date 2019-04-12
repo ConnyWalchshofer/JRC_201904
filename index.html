@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>JRC Conny Walchshofer</title>
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" href="style/bootstrap-4.3.1.min.css">
+	<link rel="stylesheet" href="style/main.css">
+	<!-- 1. BOOTSTRAP v4.0.0         CSS !-->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+<!-- 2. GOOGLE JQUERY JS v3.2.1  JS !-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+	<!-- <link rel="stylesheet" type="text/css" href="style/parallel.css" /> -->
+</head>
+<body>
+	<main>
+		<header>
+			<h1>Junior Research Challenge</h1>
+				<h4>
+				  implemented by <a href="http://www.connywa.com" target="_blank">Conny Walchshofer</a>
+				</h4>
+		  <p></p>
+				<ul class="nav nav-tabs" role="tablist">
+				  <li class="nav-item">
+					<a class="nav-link active" id="t1-tab" data-toggle="tab" href="#t1" role="tab"
+					   aria-controls="t1" aria-selected="true">
+					  Task 1
+					</a>
+				  </li>
+				  <li class="nav-item">
+						<a class="nav-link" id="t2-tab" data-toggle="tab" href="#t2" role="tab" aria-controls="t2"
+						   aria-selected="false">
+						   Task 2
+						</a>
+					</li>
+				  <li class="nav-item">
+					<a class="nav-link" id="t3-tab" data-toggle="tab" href="#t3" role="tab"
+					   aria-controls="t3" aria-selected="false">
+					   Task 3
+					</a>
+				  </li>
+				</ul>
+		</header>
+
+		<div class="tab-content">
+			<div class="tab-pane fade show active" id="t1" role="tabpanel" aria-labelledby="t1-tab">
+				<h3>Task 1: Public GitHub respository</h3>
+						<i>Goal: Demonstrate your ability to work with common collaboration tools for software development.</i>	
+						<p></p>
+						<p>Create a public GitHub respository to share any code and documents that you will be writing for tasks T2 and T3.</p>
+						<p>The created public GitHub respository can be retrieved from: <a href="https://github.com/ConnyWalchshofer/JRC_201904.git" target="_blank">Link</a></p>
+			</div>
+
+			<div class="tab-pane fade" id="t2" role="tabpanel" aria-labelledby="t2-tab">
+				<h3>Task 2: Browser-based javaScript tool</h3>
+					  <i>Goal: Demonstrate your ability to design and write web-based applications.</i>	
+					  <p></p>
+					  <p>Create a browser-based JavaScript tool for interactive visualizations of mutations in cancer. Your tool will retrieve data from an API provided by the Data Coordination Center of the International Cancer Genomics Consortium.</p>
+
+					<!-- On small screens fills the full grid, on medium+ ones only half -->
+					<div class="col-xs-12 col-md-4">
+						<h2>Types</h2>
+						<div class="barChart" id="types"></div>
+					</div>
+
+					<!-- On small screens fills the full grid, on medium+ ones only half -->
+					<div class="col-xs-12 col-md-8">
+						<h2>Chromosomes</h2>
+						<div class="btn-group" data-toggle="buttons">
+							<label class="btn btn-primary active">
+							  <input type="radio" name="options" id="chronological" autocomplete="off" checked> Chronological
+							</label>
+							<label class="btn btn-primary">
+							  <input type="radio" name="options" id="descending" autocomplete="off"> Descending
+							</label>
+						  </div>
+						<div class="barChart" id="chromosomes"></div>
+					</div>
+
+					<div class="col-sm-8">
+							<h2>Visualizing Parallel Coordinates for Analysis</h2>
+							<div id="chart">
+							<canvas id="background"></canvas>
+							<canvas id="foreground"></canvas>
+							<canvas id="highlight"></canvas>
+							<svg></svg>
+							</div>
+					
+						<div id="wrap">
+							<div  class="third">
+								<h3>Mutation Types</h3>
+								<p style="color:grey">Amount of entries per mutation type</p>
+								<p id="legend"></p>
+							</div>
+							<div class="third">
+								<h3>Sample of 10 entries <input type="text" id="search" placeholder="Search Mutation ID..."></input></h3>
+								<p style="color:grey">Mutation IDs according to data sheet</p>
+								<p id="mutation-list"></p>
+							</div>
+						</div>
+					</div>
+			</div>
+
+			<div class="tab-pane fade" id="t3" role="tabpanel" aria-labelledby="t3-tab">
+					<h3>Task 3: Design novel visualization</h3>
+						<i>Goal: Demonstrate your ability to design a novel visualization.</i>	
+						<p></p>
+						<p>The task is to propose a visual design for an interactive visualization that allows a user to explore the evolution of a single table over time. Note that you don't need to implement the visualization. We expect a quick literature review in order to find out how others have approached similar research problems before. </p>
+						<p>The following document was created with LaTeX (overleaf v2). For obtaining profound literature for the review, search engines such as Google Scholar, PubMed, XY had been used.</p>
+						<!-- <center><a href="201904_LiteratureReview_ConnyWalchshofer.pdf" target="_blank"><img src="img/LitReview.png" width="30%" height="30%" style="border:1px solid black"></center> -->
+						<p></p>
+						<center><embed src="201904_LiteratureReview_ConnyWalchshofer.pdf" type="application/pdf" width="50%" height="600px" /></center>
+			</div>
+		</div>
+	</main>
+
+
+<script src="lib/jquery-3.3.1.slim.min.js"></script>
+<script src="lib/popper-1.14.7.min.js"></script>
+<script src="lib/bootstrap-4.3.1.min.js"></script>
+
+<!-- Crossfilter cdn -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
+<!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
+<!-- <script src="http://mbostock.github.com/d3/d3.v2.js"></script> -->
+
+<script src="lib/d3js.org/d3.v4.min.js"></script>
+<script>
+	d3version4 = d3
+	window.d3 = null
+</script>
+<script src="js/barChart.js"></script>
+<script src="js/main.js"></script>
+
+
+<!-- JQuery + Bootstrap JS cdn -->
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="lib/d3js.org/d3js.org.d3.v2.js"></script>
+<script>
+	d3v2 = d3
+	// window.d3 = null
+
+	// test it worked
+	console.log('v2', d3)
+	console.log('v4', d3version4.version)
+</script>
+<script src="http://underscorejs.org/underscore.js"></script>
+
+<script src="js/parallel.js"></script>
+
+</body>
+</html>
