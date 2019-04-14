@@ -34,3 +34,7 @@ Tabular data plays an important role in many different fields, such as biology o
 - The table can be either homogeneous (where all columns have the same semantics and data type) or heterogeneous (containing columns with different semantics and data type).
 - The table can be large with thousands of rows and columns.
 - The table can contain many more columns than rows or vice versa.
+
+
+## Retrieving information
+The implementation can be retrieved from https://jrc-201904.herokuapp.com/.
