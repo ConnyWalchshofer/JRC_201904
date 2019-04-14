@@ -1,4 +1,4 @@
-# Junior Researcher Challenge
+# Junior Research Challenge
 
 The following tasks are designed to test your software development abilities as well as your problem solving skills. The excercise reflect common scenarios that you would encounter as visualization researcher, PhD student or web developer in our team.
 
