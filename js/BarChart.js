@@ -1,5 +1,5 @@
 /* global d3version4 */
-export function barChart() {
+function barChart() {
 
     var margin = {
             top: 20,
