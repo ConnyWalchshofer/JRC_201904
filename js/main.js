@@ -166,7 +166,7 @@ function barChart() {
   return chart;
 }
 
-var barChartChromosome = barChart()
+var barChartChromosome = d3version4.barChart()
   .width(600)
   .x(function(d) {
       return d.key;
@@ -174,7 +174,7 @@ var barChartChromosome = barChart()
   .y(function(d) {
       return d.value;
   });
-var barChartType = barChart()
+var barChartType = d3version4.barChart()
   .x(function(d) {
       return d.key;
   })
