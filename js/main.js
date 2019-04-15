@@ -1,5 +1,8 @@
 /* global d3version4, crossfilter, timeSeriesChart, barChart */
 // id,type,chromosome,start,end,mutation
+
+import * as bc from "js/barChart"
+
 function httpGet(url) {
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.open("GET", url, false); // false for synchronous request
@@ -22,7 +25,8 @@ function toMutationArray(json) {
   return json.hits;
 }
 
-var barChartChromosome = barChart()
+let barChartCrhomosome = bc.barChart()
+// var barChartChromosome = barChart()
   .width(600)
   .x(function(d) {
       return d.key;
