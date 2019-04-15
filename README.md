@@ -38,4 +38,4 @@ Tabular data plays an important role in many different fields, such as biology o
 
 
 ## Retrieving information
-The implementation can be retrieved from https://jrc-201904.herokuapp.com/ (in progress).
+The implementation can be retrieved from https://jrc-201904.herokuapp.com/.
