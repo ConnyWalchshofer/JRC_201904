@@ -1,4 +1,4 @@
-/* global d3, crossfilter, timeSeriesChart, barChart */
+/* global d3version4, crossfilter, timeSeriesChart, barChart */
 // id,type,chromosome,start,end,mutation
 function httpGet(url) {
   var xmlHttp = new XMLHttpRequest();
@@ -22,26 +22,6 @@ function toMutationArray(json) {
   return json.hits;
 }
 
-var barChartChromosome = barChart()
-  .width(600)
-  .x(function(d) {
-      return d.key;
-  })
-  .y(function(d) {
-      return d.value;
-  });
-var barChartType = barChart()
-  .x(function(d) {
-      return d.key;
-  })
-  .y(function(d) {
-      return d.value;
-  });
-
-// d3.csv("data/mutations.csv", function(err, data) {
-//   console.log(data);
-// });
-
 function barChart() {
 
   var margin = {
@@ -60,8 +40,8 @@ function barChart() {
       yValue = function(d) {
           return d[1];
       },
-      xScale = d3.scaleBand().padding(0.1),
-      yScale = d3.scaleLinear(),
+      xScale = d3version4.scaleBand().padding(0.1),
+      yScale = d3version4.scaleLinear(),
       onMouseOver = function() {},
       onMouseOut = function() {};
 
@@ -69,7 +49,7 @@ function barChart() {
       selection.each(function(data) {
 
           // Select the svg element, if it exists.
-          var svg = d3.select(this).selectAll("svg").data([data]);
+          var svg = d3version4.select(this).selectAll("svg").data([data]);
 
           // Otherwise, create the skeletal chart.
           var svgEnter = svg.enter().append("svg");
@@ -92,14 +72,14 @@ function barChart() {
           xScale.rangeRound([0, innerWidth])
               .domain(data.map(xValue));
           yScale.rangeRound([innerHeight, 0])
-              .domain([0, d3.max(data, yValue)]);
+              .domain([0, d3version4.max(data, yValue)]);
 
           g.select(".x.axis")
               .attr("transform", "translate(0," + innerHeight + ")")
-              .call(d3.axisBottom(xScale));
+              .call(d3version4.axisBottom(xScale));
 
           g.select(".y.axis")
-              .call(d3.axisLeft(yScale).ticks(10))
+              .call(d3version4.axisLeft(yScale).ticks(10))
               .append("text")
               .attr("transform", "rotate(-90)")
               .attr("y", 6)
@@ -186,6 +166,26 @@ function barChart() {
   return chart;
 }
 
+var barChartChromosome = barChart()
+  .width(600)
+  .x(function(d) {
+      return d.key;
+  })
+  .y(function(d) {
+      return d.value;
+  });
+var barChartType = barChart()
+  .x(function(d) {
+      return d.key;
+  })
+  .y(function(d) {
+      return d.value;
+  });
+
+// d3version4.csv("data/mutations.csv", function(err, data) {
+//   console.log(data);
+// });
+
 data = toMutationArray(JSON.parse(httpGet("https://dcc.icgc.org/api/v1/projects/GBM-US/mutations?field=id,mutation,type,chromosome,start,end&size=100&order=desc")));
 
 var csData = crossfilter(data);
@@ -221,11 +221,11 @@ barChartChromosome.onMouseOver(function(d) {
 });
 
 function update() {
-  d3.select("#types")
+  d3version4.select("#types")
       .datum(csData.types.all())
       .call(barChartType);
 
-  d3.select("#chromosomes")
+  d3version4.select("#chromosomes")
       .datum(csData.chromosomeNames.all())
       .call(barChartChromosome)
       .select(".x.axis") //Adjusting the tick labels after drawn
