@@ -166,7 +166,7 @@ function barChart() {
   return chart;
 }
 
-var barChartChromosome = d3barChart()
+var barChartChromosome = barChart()
   .width(600)
   .x(function(d) {
       return d.key;
