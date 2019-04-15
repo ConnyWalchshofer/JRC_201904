@@ -21,6 +21,7 @@ The following interaction techniques could not be implemented due to lack of tim
 - Adding functionality to the buttons of the bar chart in terms of sorting the x-axis label in a chronological order/descending order.
 - Using e.g. a an Ideogram in order to display chromosomes OR using a stacked bar chart instead of a "normal" bar chart to display the related chromosome types of the Type Overview (left bar chart) in the Chromosome Overview (right bar chart) chart.
 - Yet predominantly working with Firefox (not yet Chrome).
+- Adding tooltips in order to show values.
 
 ## Task 3
 
