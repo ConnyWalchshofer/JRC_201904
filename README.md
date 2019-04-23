@@ -20,7 +20,6 @@ Create a browser-based JavaScript tool for interactive visualization of mutation
 The following interaction techniques could not be implemented due to lack of time:
 - Adding functionality to the buttons of the bar chart in terms of sorting the x-axis label in a chronological order/descending order.
 - Using e.g. a an Ideogram in order to display chromosomes OR using a stacked bar chart instead of a "normal" bar chart to display the related chromosome types of the Type Overview (left bar chart) in the Chromosome Overview (right bar chart) chart.
-- Yet predominantly working with Firefox (not yet Chrome).
 - Adding tooltips in order to show values.
 
 ## Task 3
@@ -39,4 +38,4 @@ Tabular data plays an important role in many different fields, such as biology o
 
 
 ## Retrieving information
-The implementation can be retrieved from https://jrc-201904.herokuapp.com/ (in progress).
+The implementation can be retrieved from https://jrc-201904.herokuapp.com/.
